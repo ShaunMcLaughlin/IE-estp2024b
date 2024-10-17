@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<informationSet xmlns="ec/tss.core">
+    <item name="input">
+        <subset>
+            <item name="series">
+                <ts name="new_vehicles&#10;value (frozen)" source="" identifier="902d01dd-c5fd-48b9-8ea4-6ecea701309e">
+                    <freq>1</freq>
+                    <firstYear>1970</firstYear>
+                    <firstPeriod>1</firstPeriod>
+                    <data></data>
+                    <metaData>
+                        <property name="series.name" value="value"/>
+                        <property name="sheet.gridLayout" value="VERTICAL"/>
+                        <property name="sheet.name" value="new_vehicles"/>
+                        <property name="@source" value="XCLPRVDR"/>
+                        <property name="@id" value="demetra://tsprovider/XCLPRVDR/20111201/SERIES?file=%2Fhome%2Fshaun%2FRwork%2Fnew_vehicles.xlsx#seriesName=value&amp;sheetName=new_vehicles"/>
+                        <property name="@timestamp" value="2024-10-16"/>
+                    </metaData>
+                </ts>
+            </item>
+        </subset>
+    </item>
+    <item name="specification">
+        <subset>
+            <item name="algorithm">
+                <method version="0.1.0.0">
+                    <name>tramoseats</name>
+                    <family>Seasonal adjustment</family>
+                </method>
+            </item>
+            <item name="tramo">
+                <subset>
+                    <item name="algorithm">
+                        <method version="0.1.0.0">
+                            <name>tramo</name>
+                            <family>Modelling</family>
+                        </method>
+                    </item>
+                    <item name="transform">
+                        <subset>
+                            <item name="function">
+<string>Auto</string>
+                            </item>
+                        </subset>
+                    </item>
+                    <item name="arima">
+                        <subset>
+                            <item name="d">
+<integer>1</integer>
+                            </item>
+                            <item name="theta">
+<params>
+    <coef/>
+</params>
+                            </item>
+                            <item name="bd">
+<integer>1</integer>
+                            </item>
+                            <item name="btheta">
+<params>
+    <coef/>
+</params>
+                            </item>
+                        </subset>
+                    </item>
+                    <item name="automdl">
+                        <subset/>
+                    </item>
+                    <item name="outlier">
+                        <subset>
+                            <item name="types">
+<strings>
+    <items>AO LS TC</items>
+</strings>
+                            </item>
+                        </subset>
+                    </item>
+                    <item name="regression">
+                        <subset>
+                            <item name="calendar">
+<subset>
+    <item name="td">
+        <subset>
+            <item name="mauto">
+                <string>FTEST</string>
+            </item>
+            <item name="option">
+                <string>TradingDays</string>
+            </item>
+            <item name="leapyear">
+                <string>LeapYear</string>
+            </item>
+        </subset>
+    </item>
+    <item name="easter">
+        <subset>
+            <item name="type">
+                <string>IncludeEaster</string>
+            </item>
+            <item name="test">
+                <boolean>true</boolean>
+            </item>
+        </subset>
+    </item>
+</subset>
+                            </item>
+                        </subset>
+                    </item>
+                </subset>
+            </item>
+        </subset>
+    </item>
+    <item name="algorithm">
+        <method version="3.0.0">
+            <name>tramoseats</name>
+            <family>Seasonal adjustment</family>
+        </method>
+    </item>
+    <item name="metadata">
+        <subset>
+            <item name="@timestamp">
+                <string>2024-10-16T20:01:58.490740333</string>
+            </item>
+        </subset>
+    </item>
+</informationSet>
